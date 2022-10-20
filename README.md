@@ -1,2 +1,2 @@
 # discordmusicbot
-my discord music bot
+just add your bot token to the config.json and it should be good
