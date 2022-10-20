@@ -2,7 +2,7 @@ const { Client } = require("discord.js")
 const fs = require("fs")
 const list = require("./commands/list")
 const play = require("./commands/play")
-const { token } = require(".config.json")
+const { token } = require("./config.json")
 
 const client = new Client()
 client.commands = {}
@@ -87,6 +87,10 @@ client.on("message",(msg) => {
     })} else {
         client.commands[cmd](client,msg,args)
     }
+})
+
+client.on("ready",() => {
+    console.log("Logged in")
 })
 
 fs.readdir("./commands",(err,files) => {
